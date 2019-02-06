@@ -19,14 +19,14 @@ public class FunctionalTest {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
-    @After
-    public void cleanUp() {
-        driver.manage().deleteAllCookies();
-    }
-
-    @AfterClass
-    public static void tearDown() {
-        driver.close();
-    }
+    //@After
+    //public void cleanUp() {
+    //    driver.manage().deleteAllCookies();
+    //}
+//
+    //@AfterClass
+    //public static void tearDown() {
+    //    driver.close();
+    //}
 
 }
