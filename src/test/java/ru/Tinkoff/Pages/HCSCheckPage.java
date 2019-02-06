@@ -26,6 +26,7 @@ public class HCSCheckPage extends PageObject{
     }
 
     public void checkArea() {
+        //driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
         String AreaF = NOW_AREA.getText();
         System.out.println(AreaF);
         System.out.println(AreaT);
@@ -34,7 +35,7 @@ public class HCSCheckPage extends PageObject{
 
 
         }else {
-            this.NOW_AREA.click();
+            NOW_AREA.click();
             //driver.findElement(By.linkText("г. Москва")).click();
             //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             //driver.findElement(By.xpath("/html/body/div[1]/div/div/div[2]/div[1]/div[2]/div[1]/div[5]/div/div/div/div/div/div[2]/div/div[2]/div[1]/div/span/a/span")).click();

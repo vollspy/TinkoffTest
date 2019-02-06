@@ -16,6 +16,7 @@ public class FunctionalTest {
         System.setProperty("webdriver.chrome.driver",
                 "/home/vollspy/Downloads/chromedriver_linux64/chromedriver");
         driver = new ChromeDriver();
+        driver.get("https://www.tinkoff.ru/");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
