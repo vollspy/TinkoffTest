@@ -43,7 +43,7 @@ public class TinkoffTestCase extends FunctionalTest {
 
     @Test //выбор ЖКУ-Москва
     public void goTo05() {
-        //driver.get("https://www.tinkoff.ru/payments/categories/kommunalnie-platezhi/");
+        //https://www.tinkoff.ru/payments/categories/kommunalnie-platezhi/
         MoscowPage moscowPage = new MoscowPage(driver);
         moscowPage.saveAttribute();
         moscowPage.pickHCS();
@@ -59,7 +59,7 @@ public class TinkoffTestCase extends FunctionalTest {
 
     @Test //проверка на невалидные значения
     public void goTo07() {
-        //driver.get("https://www.tinkoff.ru/zhku-moskva/oplata/?tab=pay");
+        //https://www.tinkoff.ru/zhku-moskva/oplata/?tab=pay
         HCSInMoscowPage hcsInMoscowPage = new HCSInMoscowPage(driver);
         HomePage homePage = new HomePage(driver);
         hcsInMoscowPage.checkUp();
