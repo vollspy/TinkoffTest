@@ -1,6 +1,5 @@
 package ru.Tinkoff.Pages;
 
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,6 +12,11 @@ public class MoscowPage extends PageObject {
     //@FindBy(xpath = "/html/body/div[1]/div/div/div[2]/div[1]/div[2]/div[1]/div[6]/div/div[2]/div/div/div/section/ul/li[1]/span[1]/a/span/div/div")
     //private WebElement HCSMoscow;
 
+    @FindBy(xpath = "/html/body/div[1]/div/div/div[2]/div[1]/div[2]/div[1]/div[6]/div/div[2]/div/div/div/section/ul/li[1]/span[2]/a/span/div")
+    public WebElement HCSMoscowLink;
+
+
+
     WebElement HCSMoscow = (new WebDriverWait(driver,10)).until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/body/div[1]/div/div/div[2]/div[1]/div[2]/div[1]/div[6]/div/div[2]/div/div/div/section/ul/li[1]/span[1]/a/span/div/div")));
 
 
@@ -23,7 +27,14 @@ public class MoscowPage extends PageObject {
 
     public void pickHCS() {
         this.HCSMoscow.click();
-        String HCSMoscowSave = HCSMoscow.getText();
-        System.out.println(HCSMoscowSave);
     }
+
+    public void saveAttribute() {
+        PaymentsPage paymentsPage = new PaymentsPage(driver);
+        paymentsPage.setHCSText(this.HCSMoscowLink.getAttribute("innerText"));
+        System.out.println(paymentsPage.HCSText);
+    }
+
+
+
 }
