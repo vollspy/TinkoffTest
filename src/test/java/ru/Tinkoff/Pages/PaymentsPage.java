@@ -24,7 +24,7 @@ public class PaymentsPage extends PageObject{
 
     //WebElement nowTitle = (new WebDriverWait(driver, 10)).until(ExpectedConditions.presenceOfElementLocated(By.xpath("/html/head/title")));
 
-    public static String nowTitle;
+    //public static String nowTitle;
 
     public static String HCSText;
     public static String HCSHeadText;
@@ -38,13 +38,13 @@ public class PaymentsPage extends PageObject{
         this.HCSLink.click();
     }
 
-    public void setHCSText(String HCS){
-        this.HCSText=HCS;
+    public void setHCSText(String HCS){ //принимает ЖКУ-Москва
+        this.HCSText=HCS; //HCSText - ЖКУ-Москва
     }
 
-    public void setTitle(String title) {
-        this.HCSHeadText =title;
-    }
+    //public void setHCSHeadText(String HeadText) {
+    //    this.HCSHeadText = HeadText;
+    //}
 
     public void setText() {
         System.out.println(HCSText);
@@ -61,19 +61,11 @@ public class PaymentsPage extends PageObject{
 
     }
 
-    public void setAndCompWithNowTitle() {
-
-        nowTitle = driver.getTitle();
-        System.out.println(nowTitle);
-        if (nowTitle == HCSHeadText){
-            System.out.println(nowTitle + " = " + HCSHeadText);
-        } else {
-            System.out.println(nowTitle);
-        }
-        //System.out.println(nowTitle);
-        //Assert.assertTrue(nowTitle.equals(HCSTitle));
-
-    }
+    //public void setAndCompWithNowTitle() {
+//
+    //    Assert.assertTrue(HCSHeadText.equals(HCSTitle));
+//
+    //}
 
 
 

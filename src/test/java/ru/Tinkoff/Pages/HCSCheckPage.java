@@ -42,4 +42,8 @@ public class HCSCheckPage extends PageObject{
         }
     }
 
+    public void pickRegionPage() {
+        NOW_AREA.click();
+    }
+
 }

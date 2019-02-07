@@ -12,7 +12,6 @@ public class HCSMoscowPayPage extends PageObject{
     @FindBy(xpath = "/html/body/div[1]/div/div/div[2]/div[1]/div[2]/div[1]/div[6]/div/div[2]/div[1]/div/div/div/div[3]/div/ul/li[2]/div/a/span")
     private WebElement PayHCSMSK;
 
-    public static String HCSHeadTextNow;
 
 
     public HCSMoscowPayPage(WebDriver driver) {
@@ -30,8 +29,10 @@ public class HCSMoscowPayPage extends PageObject{
     //}
 
     public void saveHeadText() {
-        String HCSHeadTextNow = HCSHeadText.getText();
-        System.out.println(HCSHeadTextNow);
+        FindDeptPage findDeptPage = new FindDeptPage(driver);
+        findDeptPage.setHCSHeadText(this.HCSHeadText.getText());
+        //String HCSHeadTextNow = HCSHeadText.getText();
+        System.out.println(HCSHeadText + " метод seveHeadText");
     }
 
 }

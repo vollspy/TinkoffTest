@@ -9,11 +9,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MoscowPage extends PageObject {
 
-    //@FindBy(xpath = "/html/body/div[1]/div/div/div[2]/div[1]/div[2]/div[1]/div[6]/div/div[2]/div/div/div/section/ul/li[1]/span[1]/a/span/div/div")
-    //private WebElement HCSMoscow;
-
     @FindBy(xpath = "/html/body/div[1]/div/div/div[2]/div[1]/div[2]/div[1]/div[6]/div/div[2]/div/div/div/section/ul/li[1]/span[2]/a/span/div")
-    public WebElement HCSMoscowLink;
+    public WebElement HCSMoscowLink; //текст под значков ЖКУ-МСК
 
 
 
@@ -26,12 +23,13 @@ public class MoscowPage extends PageObject {
     }
 
     public void pickHCS() {
-        this.HCSMoscow.click();
+        this.HCSMoscow.click(); //выбирает ЖКУ-Москва
     }
 
     public void saveAttribute() {
+        //https://www.tinkoff.ru/payments/categories/kommunalnie-platezhi/
         PaymentsPage paymentsPage = new PaymentsPage(driver);
-        paymentsPage.setHCSText(this.HCSMoscowLink.getAttribute("innerText"));
+        paymentsPage.setHCSText(this.HCSMoscowLink.getAttribute("innerText")); //передает ЖКУ-Москва
         System.out.println(paymentsPage.HCSText);
     }
 

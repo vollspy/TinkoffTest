@@ -6,7 +6,6 @@ import ru.Tinkoff.Pages.*;
 
 import java.util.concurrent.TimeUnit;
 
-import static ru.Tinkoff.Pages.HCSMoscowPayPage.HCSHeadTextNow;
 
 
 public class TinkoffTestCase extends FunctionalTest {
@@ -103,11 +102,20 @@ public class TinkoffTestCase extends FunctionalTest {
     //    driver.manage().timeouts().pageLoadTimeout(10,TimeUnit.SECONDS);
     //}
 
-    //@Test
-    //public void goTo11() {
-    //    PaymentsPage paymentsPage = new PaymentsPage(driver);
-    //    paymentsPage.setAndCompWithNowTitle();
-    //}
+    @Test
+    public void goTo09() {
+        FindDeptPage findDeptPage = new FindDeptPage(driver);
+        HomePage homePage = new HomePage(driver);
+        PaymentsPage paymentsPage = new PaymentsPage(driver);
+        HCSCheckPage hcsCheckPage = new HCSCheckPage(driver);
+        RegionPage regionPage = new RegionPage(driver);
+        findDeptPage.setAndComp();
+        homePage.click();
+        paymentsPage.click();
+        hcsCheckPage.pickRegionPage();
+        regionPage.pickSaint();
+
+    }
 
 
 
