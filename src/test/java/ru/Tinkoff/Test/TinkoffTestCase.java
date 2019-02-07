@@ -1,18 +1,15 @@
 package ru.Tinkoff.Test;
 
-import org.junit.Assert;
 import org.junit.Test;
 import ru.Tinkoff.Pages.*;
-
-import java.util.concurrent.TimeUnit;
 
 
 
 public class TinkoffTestCase extends FunctionalTest {
 
-    //MoscowPage moscowPage = new MoscowPage(driver);
 
 
+    //TODO рассчитываю тут на порядок, знаю что это неправильно, но пока в разработке!
     @Test //переход на вкладку платежи
     public void goTo01() {
         //https://www.tinkoff.ru/
@@ -35,8 +32,6 @@ public class TinkoffTestCase extends FunctionalTest {
         //https://www.tinkoff.ru/payments/categories/kommunalnie-platezhi/
         HCSCheckPage hcsCheckPage = new HCSCheckPage(driver);
         hcsCheckPage.checkArea();
-        System.out.println("3");
-
     }
 
     @Test //в выборе региона выбираем Москву
@@ -44,7 +39,6 @@ public class TinkoffTestCase extends FunctionalTest {
         //https://www.tinkoff.ru/payments/categories/kommunalnie-platezhi/?popup=REGIONS_CHANGE-458718.1549480251261
         RegionPage regionPage = new RegionPage(driver);
         regionPage.pickMoskow();
-
     }
 
     @Test //выбор ЖКУ-Москва
@@ -53,10 +47,6 @@ public class TinkoffTestCase extends FunctionalTest {
         MoscowPage moscowPage = new MoscowPage(driver);
         moscowPage.saveAttribute();
         moscowPage.pickHCS();
-
-
-
-
     }
 
     @Test //выбор оплатить ЖКУ в Москве
@@ -65,7 +55,6 @@ public class TinkoffTestCase extends FunctionalTest {
         HCSMoscowPayPage hcsMoscowPayPage = new HCSMoscowPayPage(driver);
         hcsMoscowPayPage.saveHeadText();
         hcsMoscowPayPage.pickMSK();
-
     }
 
     @Test //проверка на невалидные значения
@@ -75,6 +64,14 @@ public class TinkoffTestCase extends FunctionalTest {
         HomePage homePage = new HomePage(driver);
         hcsInMoscowPage.checkUp();
         hcsInMoscowPage.checkError();
+        hcsInMoscowPage.checkUpOne();
+        hcsInMoscowPage.checkErrorOne();
+        hcsInMoscowPage.checkUpTwo();
+        hcsInMoscowPage.checkErrorTwo();
+        hcsInMoscowPage.checkUpThree();
+        hcsInMoscowPage.checkErrorThree();
+        hcsInMoscowPage.checkUpFour();
+        hcsInMoscowPage.checkErrorFour();
         homePage.click();
 
 
@@ -92,17 +89,7 @@ public class TinkoffTestCase extends FunctionalTest {
 
     }
 
-
-
-    //@Test
-    //public void  goTo09() throws InterruptedException {
-    //    //driver.get("https://www.tinkoff.ru/zhku-moskva/");
-    //    PaymentsPage paymentsPage = new PaymentsPage(driver);
-    //    paymentsPage.clickField();
-    //    driver.manage().timeouts().pageLoadTimeout(10,TimeUnit.SECONDS);
-    //}
-
-    @Test
+    @Test //далее по сценарию до выбора г. Санкт-Петербург
     public void goTo09() {
         FindDeptPage findDeptPage = new FindDeptPage(driver);
         HomePage homePage = new HomePage(driver);
@@ -117,9 +104,15 @@ public class TinkoffTestCase extends FunctionalTest {
 
     }
 
+    @Test //Поиск ЖКУ-Москва на вкладке ЖКХ в Санкт-Петербурге
+    public void goTo10() {
+        HCSSaintPetPage hcsSaintPetPage = new HCSSaintPetPage(driver);
+        hcsSaintPetPage.Print();
+    }
+
 
 
 
 }
 
-//good
+

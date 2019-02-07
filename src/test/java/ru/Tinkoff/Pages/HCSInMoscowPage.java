@@ -10,6 +10,10 @@ public class HCSInMoscowPage extends PageObject{
     String numInPeriodField = "222222";
     String numInVolPayField = "1111111111111111111111111111110";
     String numInPayField = "1111111111111111111111111111110";
+    String numInPayFieldTwo = "5";
+    String numInPayFieldThree = "150000";
+    String numInPayFieldFour = "100";
+    String numInVolPayFieldFour = "500";
 
     @FindBy(xpath = "//*[@id=\"payerCode\"]")
     private WebElement idField;
@@ -65,6 +69,53 @@ public class HCSInMoscowPage extends PageObject{
 
     }
 
+    public void checkUpOne() {
+        driver.navigate().refresh();
+        submitButton.click();
+    }
+
+    public void checkErrorOne(){
+        String StErIdFieldOne = ErIdField.getText();
+        System.out.println(StErIdFieldOne);
+        String StErPeriodFieldOne = ErPeriodField.getText();
+        System.out.println(StErPeriodFieldOne);
+        String StErPayFieldOne = ErPayField.getText();
+        System.out.println(StErPayFieldOne);
+    }
+
+    public void checkUpTwo() {
+        driver.navigate().refresh();
+        payField.sendKeys(numInPayFieldTwo);
+        submitButton.click();
+    }
+
+    public void checkErrorTwo() {
+        String StErPayFieldTwo = ErPayField.getText();
+        System.out.println(StErPayFieldTwo);
+    }
+
+    public void checkUpThree() {
+        driver.navigate().refresh();
+        payField.sendKeys(numInPayFieldThree);
+        submitButton.click();
+    }
+
+    public void checkErrorThree() {
+        String StErPayFieldOne = ErPayField.getText();
+        System.out.println(StErPayFieldOne);
+    }
+
+    public void checkUpFour() {
+        driver.navigate().refresh();
+        payField.sendKeys(numInPayFieldFour);
+        volPayField.sendKeys(numInVolPayFieldFour);
+        submitButton.click();
+    }
+
+    public void checkErrorFour() {
+        String StErVolPayField = ErVolPayField.getText();
+        System.out.println(StErVolPayField);
+    }
 
 
 }

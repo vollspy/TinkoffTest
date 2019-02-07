@@ -1,12 +1,11 @@
 package ru.Tinkoff.Pages;
 
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static ru.Tinkoff.Pages.PaymentsPage.HCSHeadText;
+
 
 
 public class FindDeptPage extends PageObject{
@@ -26,14 +25,8 @@ public class FindDeptPage extends PageObject{
     public void setAndComp() {
 
         String StDeptHeadText = DeptHeadText.getText();
-        //System.out.println(StDeptHeadText);
         Assert.assertTrue(StDeptHeadText.equals(HCSHeadTextNow));
-        //if (StDeptHeadText == HCSHeadTextNow) {
-        //    driver.findElement(By.linkText("Платежи")).click();
-        //} else {
-        //    System.out.println(HCSHeadTextNow + " hi");
-        //    System.out.println(StDeptHeadText + " end");
-        //}
+
 
     }
 }

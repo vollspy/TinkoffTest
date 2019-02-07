@@ -29,8 +29,10 @@ public class MoscowPage extends PageObject {
     public void saveAttribute() {
         //https://www.tinkoff.ru/payments/categories/kommunalnie-platezhi/
         PaymentsPage paymentsPage = new PaymentsPage(driver);
+        HCSSaintPetPage hcsSaintPetPage = new HCSSaintPetPage(driver);
         paymentsPage.setHCSText(this.HCSMoscowLink.getAttribute("innerText")); //передает ЖКУ-Москва
-        System.out.println(paymentsPage.HCSText);
+        hcsSaintPetPage.setHCSTextTo(this.HCSMoscowLink.getAttribute("innerText"));
+        System.out.println(paymentsPage.HCSText + " атрибут");
     }
 
 

@@ -22,16 +22,10 @@ public class HCSMoscowPayPage extends PageObject{
         this.PayHCSMSK.click();
     }
 
-    //public void saveHeadText() {
-    //    PaymentsPage paymentsPage = new PaymentsPage(driver);
-    //    paymentsPage.setTitle(driver.getTitle());
-    //    System.out.println(paymentsPage.HCSHeadText);
-    //}
 
     public void saveHeadText() {
         FindDeptPage findDeptPage = new FindDeptPage(driver);
         findDeptPage.setHCSHeadText(this.HCSHeadText.getText());
-        //String HCSHeadTextNow = HCSHeadText.getText();
         System.out.println(HCSHeadText + " метод seveHeadText");
     }
 
